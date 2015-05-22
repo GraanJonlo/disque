@@ -10,9 +10,13 @@ Currently (27 April 2015) the project is just an alpha quality preview, that was
 
 # How to use this image
 
-## start a disque instance
+## create and start a disque instance
 
     docker run --name disque [-p 7711:7711] [-v /some/directory:/data] -d graanjonlo/disque[:tag]
+
+## connect to a disque instance
+
+    docker exec -t -i disque disque -p 7711
 
 This image includes `EXPOSE 7711`, so standard container linking will make it automatically available to the linked containers. It also includes `VOLUME ["/data"]` so you can mount a data volume.
 
