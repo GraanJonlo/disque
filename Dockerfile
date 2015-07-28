@@ -8,11 +8,14 @@ RUN \
   git \
   tcl
 
+ENV SHA1 4a72de00d7296b2b796229b7c2aaeb1433ae6ec2
+
 RUN \
   cd /tmp && \
   ssh-keyscan github.com >> ~/.ssh/known_hosts && \
-  git clone https://github.com/antirez/disque.git --depth=1 && \
+  git clone https://github.com/antirez/disque.git && \
   cd disque && \
+  git reset --hard $SHA1 && \
   make && \
   make install && \
   mkdir -p /etc/disque && \
