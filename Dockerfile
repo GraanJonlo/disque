@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.17
 
 MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 
@@ -8,7 +8,7 @@ RUN \
   git \
   tcl
 
-ENV SHA1 4a72de00d7296b2b796229b7c2aaeb1433ae6ec2
+ENV SHA1 6dbfa4c1a6145f9af88f2ae522b8a0d1dbf2b8ca
 
 RUN \
   cd /tmp && \
