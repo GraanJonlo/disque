@@ -8,7 +8,7 @@ RUN \
   git \
   tcl
 
-ENV SHA1 706676f354cbf43689d587b556e1211ba8fa47d7
+ENV SHA1 4d122a9c263f20d07eb440a0b9ae348a56996d98
 
 RUN \
   cd /tmp && \
