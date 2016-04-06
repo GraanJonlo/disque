@@ -8,7 +8,9 @@ RUN \
   git \
   tcl
 
-ENV SHA1 3573254149706a5dfafc142bce12c7976792c5a2
+RUN rm -rf /var/lib/apt/lists/*
+
+ENV SHA1 fe8210eaa9c27946a915a0e0759f400888513d4b
 
 RUN \
   cd /tmp && \
@@ -32,4 +34,3 @@ ADD disque.conf /etc/disque/disque.conf
 EXPOSE 7711
 
 CMD ["/sbin/my_init", "--quiet"]
-
