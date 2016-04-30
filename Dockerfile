@@ -2,15 +2,20 @@ FROM phusion/baseimage:0.9.18
 
 MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 
+ADD https://github.com/kelseyhightower/confd/releases/download/v0.11.0/confd-0.11.0-linux-amd64 /usr/local/bin/confd
+RUN chmod +x /usr/local/bin/confd
+
+RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
+
 RUN \
-  apt-get update && apt-get upgrade -y && apt-get install -y \
+  apt-get install -y \
   build-essential \
   git \
   tcl
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV SHA1 fe8210eaa9c27946a915a0e0759f400888513d4b
+ENV SHA1 0192ba7e1cda157024229962b7bee1c6e86d771b
 
 RUN \
   cd /tmp && \
